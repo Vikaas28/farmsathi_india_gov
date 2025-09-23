@@ -20,9 +20,9 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl">
           {/* Government Badge */}
-          <div className="inline-flex items-center space-x-2 bg-secondary/90 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <Shield className="w-4 h-4 text-secondary-foreground" />
-            <span className="text-sm font-medium text-secondary-foreground">
+          <div className="inline-flex items-center space-x-2 bg-[var(--gradient-glass)] backdrop-blur-md px-6 py-3 rounded-full mb-8 border border-white/20 shadow-[var(--shadow-card)]">
+            <Shield className="w-5 h-5 text-white" />
+            <span className="text-base font-semibold text-white">
               भारत सरकार की पहल | Government of India Initiative
             </span>
           </div>
@@ -42,32 +42,32 @@ const HeroSection = () => {
           </p>
 
           {/* Feature Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            <div className="flex items-center space-x-3 text-white">
-              <div className="w-10 h-10 bg-success rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-5 h-5" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="flex items-center space-x-4 text-white p-4 bg-[var(--gradient-glass)] rounded-2xl backdrop-blur-md border border-white/20 shadow-[var(--shadow-card)]">
+              <div className="w-14 h-14 bg-gradient-to-br from-success to-success/80 rounded-2xl flex items-center justify-center shadow-[var(--shadow-button)]">
+                <TrendingUp className="w-7 h-7" />
               </div>
               <div>
-                <h3 className="font-semibold">Market Intelligence</h3>
-                <p className="text-sm text-white/80">Real-time crop prices</p>
+                <h3 className="font-bold text-lg">Market Intelligence</h3>
+                <p className="text-white/90">Real-time crop prices</p>
               </div>
             </div>
-            <div className="flex items-center space-x-3 text-white">
-              <div className="w-10 h-10 bg-warning rounded-lg flex items-center justify-center">
-                <Smartphone className="w-5 h-5" />
+            <div className="flex items-center space-x-4 text-white p-4 bg-[var(--gradient-glass)] rounded-2xl backdrop-blur-md border border-white/20 shadow-[var(--shadow-card)]">
+              <div className="w-14 h-14 bg-gradient-to-br from-warning to-warning/80 rounded-2xl flex items-center justify-center shadow-[var(--shadow-button)]">
+                <Smartphone className="w-7 h-7" />
               </div>
               <div>
-                <h3 className="font-semibold">Smart Farming</h3>
-                <p className="text-sm text-white/80">AI-powered crop guidance</p>
+                <h3 className="font-bold text-lg">Smart Farming</h3>
+                <p className="text-white/90">AI-powered crop guidance</p>
               </div>
             </div>
-            <div className="flex items-center space-x-3 text-white">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <Shield className="w-5 h-5" />
+            <div className="flex items-center space-x-4 text-white p-4 bg-[var(--gradient-glass)] rounded-2xl backdrop-blur-md border border-white/20 shadow-[var(--shadow-card)]">
+              <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center shadow-[var(--shadow-button)]">
+                <Shield className="w-7 h-7" />
               </div>
               <div>
-                <h3 className="font-semibold">Gov. Schemes</h3>
-                <p className="text-sm text-white/80">Direct benefit access</p>
+                <h3 className="font-bold text-lg">Gov. Schemes</h3>
+                <p className="text-white/90">Direct benefit access</p>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ const HeroSection = () => {
               Start Your Digital Journey
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-primary">
+            <Button variant="glass" size="lg" className="text-lg px-10 py-4 font-bold">
               Watch Demo
             </Button>
           </div>

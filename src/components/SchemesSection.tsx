@@ -84,20 +84,20 @@ const SchemesSection = () => {
         {/* Schemes Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {schemes.map((scheme) => (
-            <Card key={scheme.id} className="p-6 hover:shadow-strong transition-all duration-300 border-border bg-gradient-card">
+            <Card key={scheme.id} className="p-8 hover:shadow-[var(--shadow-card-hover)] transition-[var(--transition-samsung)] border-border/50 bg-gradient-to-br from-card to-muted/30 backdrop-blur-sm rounded-2xl transform hover:-translate-y-1">
               {/* Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-white
-                    ${scheme.color === 'success' ? 'bg-success' : 
-                      scheme.color === 'accent' ? 'bg-accent' : 
-                      scheme.color === 'warning' ? 'bg-warning' : 
-                      'bg-primary'} shadow-soft`}>
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-[var(--shadow-card)] backdrop-blur-sm
+                    ${scheme.color === 'success' ? 'bg-gradient-to-br from-success to-success/80' : 
+                      scheme.color === 'accent' ? 'bg-gradient-to-br from-accent to-accent/80' : 
+                      scheme.color === 'warning' ? 'bg-gradient-to-br from-warning to-warning/80' : 
+                      'bg-gradient-to-br from-primary to-primary/80'}`}>
                     {scheme.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-card-foreground">{scheme.name}</h3>
-                    <Badge variant="secondary" className="mt-1">
+                    <h3 className="text-xl font-bold text-card-foreground">{scheme.name}</h3>
+                    <Badge variant="secondary" className="mt-2 rounded-full">
                       {scheme.status}
                     </Badge>
                   </div>
@@ -153,31 +153,31 @@ const SchemesSection = () => {
 
         {/* Additional Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="p-6 text-center border-primary/20 bg-primary/5">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white mx-auto mb-4">
-              <CheckCircle className="w-6 h-6" />
+          <Card className="p-8 text-center border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-[var(--transition-samsung)]">
+            <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 shadow-[var(--shadow-button)]">
+              <CheckCircle className="w-8 h-8" />
             </div>
-            <h4 className="font-bold text-card-foreground mb-2">Eligibility Check</h4>
+            <h4 className="text-lg font-bold text-card-foreground mb-3">Eligibility Check</h4>
             <p className="text-sm text-muted-foreground">
               Instant verification of your eligibility for all schemes
             </p>
           </Card>
 
-          <Card className="p-6 text-center border-accent/20 bg-accent/5">
-            <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center text-white mx-auto mb-4">
-              <FileText className="w-6 h-6" />
+          <Card className="p-8 text-center border-accent/20 bg-gradient-to-br from-accent/5 to-accent/10 rounded-2xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-[var(--transition-samsung)]">
+            <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 shadow-[var(--shadow-button)]">
+              <FileText className="w-8 h-8" />
             </div>
-            <h4 className="font-bold text-card-foreground mb-2">Document Guidance</h4>
+            <h4 className="text-lg font-bold text-card-foreground mb-3">Document Guidance</h4>
             <p className="text-sm text-muted-foreground">
               Step-by-step help for document preparation
             </p>
           </Card>
 
-          <Card className="p-6 text-center border-success/20 bg-success/5">
-            <div className="w-12 h-12 bg-success rounded-lg flex items-center justify-center text-white mx-auto mb-4">
-              <Tractor className="w-6 h-6" />
+          <Card className="p-8 text-center border-success/20 bg-gradient-to-br from-success/5 to-success/10 rounded-2xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-[var(--transition-samsung)]">
+            <div className="w-16 h-16 bg-gradient-to-br from-success to-success/80 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 shadow-[var(--shadow-button)]">
+              <Tractor className="w-8 h-8" />
             </div>
-            <h4 className="font-bold text-card-foreground mb-2">Status Tracking</h4>
+            <h4 className="text-lg font-bold text-card-foreground mb-3">Status Tracking</h4>
             <p className="text-sm text-muted-foreground">
               Real-time updates on your application status
             </p>
@@ -186,14 +186,14 @@ const SchemesSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Card className="p-8 bg-gradient-to-r from-secondary/10 to-primary/10 border-primary/20">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+          <Card className="p-10 bg-gradient-to-br from-secondary/10 via-primary/5 to-accent/10 border-primary/20 rounded-3xl shadow-[var(--shadow-elevated)] backdrop-blur-sm">
+            <h3 className="text-3xl font-bold text-foreground mb-6">
               Need Help with Applications?
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Our experts are available to guide you through the application process
             </p>
-            <Button variant="government" size="lg">
+            <Button variant="samsung" size="lg">
               Get Expert Assistance
             </Button>
           </Card>

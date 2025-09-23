@@ -105,29 +105,31 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="p-6 hover:shadow-strong transition-all duration-300 hover:scale-105 border-border bg-gradient-card group cursor-pointer"
+              className="p-8 hover:shadow-[var(--shadow-card-hover)] transition-[var(--transition-samsung)] hover:scale-105 border-border/50 bg-gradient-to-br from-card to-muted/30 group cursor-pointer rounded-2xl backdrop-blur-sm transform hover:-translate-y-2"
             >
               {/* Feature Icon with Gradient */}
-              <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-medium`}>
-                {feature.icon}
+              <div className={`w-20 h-20 bg-gradient-to-br ${feature.gradient} rounded-3xl flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-[var(--transition-bounce)] shadow-[var(--shadow-button)]`}>
+                <div className="scale-125">
+                  {feature.icon}
+                </div>
               </div>
 
               {/* Category Badge */}
-              <div className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-3">
+              <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-primary/20">
                 {feature.category}
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold text-card-foreground mb-4 group-hover:text-primary transition-[var(--transition-samsung)]">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-base">
                 {feature.description}
               </p>
 
               {/* Learn More Link */}
-              <div className="mt-4 pt-4 border-t border-border/50">
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary-hover p-0">
+              <div className="mt-6 pt-6 border-t border-border/50">
+                <Button variant="ghost" size="sm" className="text-primary hover:text-primary-hover p-0 font-semibold">
                   Learn More →
                 </Button>
               </div>
@@ -137,18 +139,18 @@ const FeaturesSection = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <Card className="p-8 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+          <Card className="p-12 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 border-primary/20 rounded-3xl shadow-[var(--shadow-elevated)] backdrop-blur-sm">
+            <h3 className="text-3xl font-bold text-foreground mb-6">
               Ready to Transform Your Farming?
             </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
               Join thousands of farmers who are already using Farmsathi to increase their productivity and income.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button variant="hero" size="lg" className="px-10">
                 Register as Farmer
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="samsung" size="lg" className="px-10">
                 Schedule Demo
               </Button>
             </div>
