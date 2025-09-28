@@ -150,7 +150,7 @@ const FeaturesSection = () => {
               <Button variant="hero" size="lg" className="px-10">
                 Register as Farmer
               </Button>
-              <Button variant="samsung" size="lg" className="px-10">
+              <Button variant="glass" size="lg" className="px-10">
                 Schedule Demo
               </Button>
             </div>

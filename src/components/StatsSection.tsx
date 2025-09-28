@@ -60,12 +60,16 @@ const StatsSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-12">
+          <div className="inline-flex items-center space-x-2 bg-primary/10 px-6 py-2 rounded-full mb-4">
+            <div className="w-2 h-2 bg-primary rounded-full"></div>
+            <span className="text-primary font-semibold text-sm">सरकारी आंकड़े | Government Statistics</span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Empowering Farmers
-            <span className="text-primary block">Across India</span>
+            भारत के किसानों को सशक्त बनाना
+            <span className="text-primary block">Empowering India's Farmers</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join millions of farmers who have transformed their agricultural practices with Farmsathi
+            लाखों किसानों के साथ जुड़ें जिन्होंने फार्मसाथी के साथ अपनी कृषि पद्धतियों को बदला है
           </p>
         </div>
 

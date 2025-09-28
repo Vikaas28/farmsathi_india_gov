@@ -193,7 +193,7 @@ const SchemesSection = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Our experts are available to guide you through the application process
             </p>
-            <Button variant="samsung" size="lg">
+            <Button variant="glass" size="lg">
               Get Expert Assistance
             </Button>
           </Card>

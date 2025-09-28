@@ -19,27 +19,36 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl">
-          {/* Government Badge */}
-          <div className="inline-flex items-center space-x-2 bg-[var(--gradient-glass)] backdrop-blur-md px-6 py-3 rounded-full mb-8 border border-white/20 shadow-[var(--shadow-card)]">
-            <Shield className="w-5 h-5 text-white" />
-            <span className="text-base font-semibold text-white">
-              भारत सरकार की पहल | Government of India Initiative
-            </span>
+          {/* Official Government Badge */}
+          <div className="inline-flex items-center space-x-3 bg-white/95 backdrop-blur-md px-8 py-4 rounded-full mb-8 border-2 border-primary/20 shadow-[var(--shadow-government)]">
+            <div className="w-8 h-8 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center">
+              <Shield className="w-4 h-4 text-white" />
+            </div>
+            <div className="text-center">
+              <div className="text-sm font-bold text-primary">भारत सरकार की आधिकारिक पहल</div>
+              <div className="text-xs text-foreground">Official Government of India Digital Platform</div>
+            </div>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            <span className="block">Farmsathi</span>
-            <span className="block text-3xl md:text-4xl font-normal text-white/90 mt-2">
-              किसानों का डिजिटल साथी
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <span className="block text-white drop-shadow-lg">Farmsathi</span>
+            <span className="block text-2xl md:text-3xl font-semibold text-secondary drop-shadow-lg mt-2">
+              फार्मसाथी - किसानों का डिजिटल साथी
             </span>
           </h1>
 
           {/* Description */}
-          <p className="text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-            Empowering India's farmers with cutting-edge technology. Access real-time market prices, 
-            weather forecasts, government schemes, and expert agricultural guidance - all in one platform.
-          </p>
+          <div className="mb-8 max-w-3xl">
+            <p className="text-xl text-white mb-4 leading-relaxed font-medium">
+              भारत के किसानों को आधुनिक तकनीक से सशक्त बनाना। वास्तविक समय की बाजार कीमतें, मौसम पूर्वानुमान, 
+              सरकारी योजनाएं और विशेषज्ञ कृषि मार्गदर्शन - सब एक ही मंच पर।
+            </p>
+            <p className="text-lg text-white/90 leading-relaxed">
+              Empowering India's farmers with modern technology. Real-time market prices, weather forecasts, 
+              government schemes, and expert agricultural guidance - all on one platform.
+            </p>
+          </div>
 
           {/* Feature Highlights */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -73,13 +82,13 @@ const HeroSection = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-              Start Your Digital Journey
-              <ArrowRight className="w-5 h-5 ml-2" />
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+            <Button variant="default" size="lg" className="text-lg px-10 py-4 bg-white text-primary hover:bg-white/90 font-bold shadow-[var(--shadow-government)]">
+              किसान पंजीकरण | Register as Farmer
+              <ArrowRight className="w-5 h-5 ml-3" />
             </Button>
-            <Button variant="glass" size="lg" className="text-lg px-10 py-4 font-bold">
-              Watch Demo
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 font-bold border-2 border-white text-white hover:bg-white/10">
+              सेवाएं देखें | View Services
             </Button>
           </div>
 
