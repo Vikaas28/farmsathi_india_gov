@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Smartphone, TrendingUp, Shield } from 'lucide-react';
-import heroImage from '@/assets/farmsathi-hero.jpg';
+import heroImage from '@/assets/crop-fields-hero.jpg';
 
 const HeroSection = () => {
   return (
