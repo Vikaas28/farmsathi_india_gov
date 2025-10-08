@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
@@ -15,27 +16,32 @@ import {
 } from 'lucide-react';
 
 const FeaturesSection = () => {
+  const navigate = useNavigate();
+
   const features = [
     {
       icon: <Leaf className="w-8 h-8" />,
       title: "Smart Crop Management",
       description: "AI-powered recommendations for crop selection, fertilizers, and disease prevention based on your soil and climate data.",
       category: "Farming Tools",
-      gradient: "from-primary to-success"
+      gradient: "from-primary to-success",
+      link: "/crop-management"
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Market Price Intelligence", 
       description: "Real-time market prices from e-NAM and local mandis. Know when and where to sell for maximum profit.",
       category: "Market Data",
-      gradient: "from-accent to-primary"
+      gradient: "from-accent to-primary",
+      link: "/market-analysis"
     },
     {
       icon: <Cloud className="w-8 h-8" />,
       title: "Hyper-Local Weather",
       description: "Precise weather forecasts and alerts for your exact location to plan farming activities effectively.",
       category: "Weather Advisory",
-      gradient: "from-accent to-success"
+      gradient: "from-accent to-success",
+      link: "/weather"
     },
     {
       icon: <Shield className="w-8 h-8" />,
@@ -129,8 +135,14 @@ const FeaturesSection = () => {
 
               {/* Learn More Link */}
               <div className="mt-6 pt-6 border-t border-border/50">
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary-hover p-0 font-semibold">
-                  Learn More →
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="text-primary hover:text-primary-hover p-0 font-semibold"
+                  onClick={() => feature.link && navigate(feature.link)}
+                  disabled={!feature.link}
+                >
+                  {feature.link ? 'Explore Feature →' : 'Coming Soon'}
                 </Button>
               </div>
             </Card>
