@@ -1,8 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
-import { Menu, Globe, Phone } from 'lucide-react';
+import { Menu, Globe, Phone, LogOut, User } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import type { User as SupabaseUser } from '@supabase/supabase-js';
 
 const Header = () => {
+  const [user, setUser] = useState<SupabaseUser | null>(null);
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    // Get initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await supabase.auth.signOut();
+      toast({
+        title: 'Logged out',
+        description: 'You have been successfully logged out.',
+      });
+      navigate('/auth');
+    } catch (error: any) {
+      toast({
+        variant: 'destructive',
+        title: 'Error',
+        description: error.message,
+      });
+    }
+  };
+
   return (
     <>
       {/* Government Top Bar */}
@@ -73,10 +112,28 @@ const Header = () => {
                 <Menu className="w-5 h-5" />
               </Button>
 
-              {/* Login Button */}
-              <Button variant="default" size="sm" className="bg-gradient-to-r from-primary to-success font-medium">
-                किसान लॉगिन | Farmer Login
-              </Button>
+              {/* Auth Actions */}
+              {user ? (
+                <div className="flex items-center gap-3">
+                  <div className="hidden md:flex items-center gap-2 text-sm text-muted-foreground">
+                    <User className="h-4 w-4" />
+                    <span className="max-w-[150px] truncate">{user.email}</span>
+                  </div>
+                  <Button variant="outline" size="sm" onClick={handleLogout} className="border-destructive/30 text-destructive hover:bg-destructive/10">
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Logout
+                  </Button>
+                </div>
+              ) : (
+                <Button 
+                  variant="default" 
+                  size="sm" 
+                  className="bg-gradient-to-r from-primary to-success font-medium"
+                  onClick={() => navigate('/auth')}
+                >
+                  किसान लॉगिन | Farmer Login
+                </Button>
+              )}
             </div>
           </div>
         </div>
