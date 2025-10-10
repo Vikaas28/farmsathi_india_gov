@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -15,6 +16,8 @@ import {
 } from 'lucide-react';
 
 const SchemesSection = () => {
+  const navigate = useNavigate();
+  
   const schemes = [
     {
       id: "pm-kisan",
@@ -188,14 +191,24 @@ const SchemesSection = () => {
         <div className="text-center mt-12">
           <Card className="p-10 bg-gradient-to-br from-secondary/10 via-primary/5 to-accent/10 border-primary/20 rounded-3xl shadow-[var(--shadow-elevated)] backdrop-blur-sm">
             <h3 className="text-3xl font-bold text-foreground mb-6">
-              Need Help with Applications?
+              View All Government Schemes
             </h3>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Our experts are available to guide you through the application process
+              Explore 8+ central and state government schemes with complete details and application links
             </p>
-            <Button variant="glass" size="lg">
-              Get Expert Assistance
-            </Button>
+            <div className="flex gap-4 justify-center">
+              <Button 
+                variant="default" 
+                size="lg"
+                onClick={() => navigate('/schemes')}
+              >
+                Browse All Schemes
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button variant="glass" size="lg">
+                Get Expert Assistance
+              </Button>
+            </div>
           </Card>
         </div>
       </div>

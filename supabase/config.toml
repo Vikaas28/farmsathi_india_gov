@@ -1,1 +1,7 @@
 project_id = "dtkwdofbrhzxknluxlid"
+
+[functions.get-market-prices]
+verify_jwt = false
+
+[functions.get-weather]
+verify_jwt = false
